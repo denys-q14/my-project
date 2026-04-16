@@ -56,31 +56,41 @@ def divide_values(digit1: int | float, digit2: int | float) -> float:
 
 
 def calculator():
-    """Простий консольний калькулятор."""
+    """Простий консольний калькулятор з меню."""
     print("Простий калькулятор")
-    print("Доступні операції: +, -, *, /")
-    print("Введіть 'exit' для виходу")
+    print("Оберіть операцію:")
 
     while True:
+        print("\nМеню:")
+        print("1. Додавання (+)")
+        print("2. Віднімання (-)")
+        print("3. Множення (*)")
+        print("4. Ділення (/)")
+        print("5. Вихід")
+
         try:
-            operation = input("Введіть операцію (+, -, *, /): ").strip()
-            if operation.lower() == 'exit':
+            choice = input("Введіть номер операції (1-5): ").strip()
+            if choice == '5':
                 print("До побачення!")
                 break
-            if operation not in ['+', '-', '*', '/']:
-                print("Невірна операція. Спробуйте ще раз.")
+            if choice not in ['1', '2', '3', '4']:
+                print("Невірний вибір. Спробуйте ще раз.")
                 continue
 
             digit1 = float(input("Введіть перше число: "))
             digit2 = float(input("Введіть друге число: "))
 
-            if operation == '+':
+            if choice == '1':
+                operation = '+'
                 result = sum_values(digit1, digit2)
-            elif operation == '-':
+            elif choice == '2':
+                operation = '-'
                 result = subtract_values(digit1, digit2)
-            elif operation == '*':
+            elif choice == '3':
+                operation = '*'
                 result = multiply_values(digit1, digit2)
-            elif operation == '/':
+            elif choice == '4':
+                operation = '/'
                 result = divide_values(digit1, digit2)
 
             print(f"Результат: {digit1} {operation} {digit2} = {result}")
