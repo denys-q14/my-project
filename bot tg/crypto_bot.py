@@ -1,3 +1,8 @@
+from dotenv import load_dotenv
+import os
+print("DEBUG:", os.path.isfile(".env"))
+load_dotenv()
+print("DEBUG TOKEN:", os.getenv("TELEGRAM_BOT_TOKEN"))
 """
 Telegram бот для отримання цін криптовалют
 """

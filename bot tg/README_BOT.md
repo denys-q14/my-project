@@ -44,13 +44,13 @@ pip install -r requirements.txt
 
 ```bash
 # На macOS/Linux:
-export TELEGRAM_BOT_TOKEN='your_bot_token_here'
+export TELEGRAM_TOKEN='your_bot_token_here'
 
 # На Windows (Command Prompt):
-set TELEGRAM_BOT_TOKEN=your_bot_token_here
+set TELEGRAM_TOKEN=your_bot_token_here
 
 # На Windows (PowerShell):
-$env:TELEGRAM_BOT_TOKEN='your_bot_token_here'
+$env:TELEGRAM_TOKEN='your_bot_token_here'
 ```
 
 ### 6. Запуск бота
@@ -101,12 +101,12 @@ python3 crypto_bot.py
 
 Всі налаштування зберігаються у змінних оточення:
 
-- `TELEGRAM_BOT_TOKEN` - токен вашого Telegram бота
+- `TELEGRAM_TOKEN` - токен вашого Telegram бота
 
 ## 🐛 Розв'язування проблем
 
 ### Бот не запускається
-- Перевірте, що встановлена змінна оточення `TELEGRAM_BOT_TOKEN`
+- Перевірте, що встановлена змінна оточення `TELEGRAM_TOKEN`
 - Перевірте, чи правильний токен
 
 ### Не отримуються дані про ціни
@@ -129,7 +129,7 @@ worker: python crypto_bot.py
 2. Разгерніть на Heroku:
 ```bash
 heroku create your-app-name
-heroku config:set TELEGRAM_BOT_TOKEN='your_token'
+heroku config:set TELEGRAM_TOKEN='your_token'
 git push heroku main
 heroku ps:scale worker=1
 ```
